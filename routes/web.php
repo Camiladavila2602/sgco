@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\CursoController; 
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,9 @@ Route::delete('/curso/{curso}', [CursoController::class, 'destroy'])->name('curs
 Route::put('/curso/{curso}', [CursoController::class, 'update'])->name('cursos.update');
 Route::get('/curso/{curso}/edit', [CursoController::class , 'edit'])->name('cursos.edit');
 
+Route::get('/instructores', [InstructorController:: class, 'index'])->name('instructor.index');
+Route::post('/instructores', [instructorController::class, 'store'])->name('instructor.store');
+Route::get('/instructores/create', [instructorController::class, 'create'])->name('instructor.create');
+Route::delete('/instructores/{instructor}', [instructorController::class, 'destroy'])->name('instructor.destroy');
+Route::put('/instructores/{instructor}', [instructorController::class, 'update'])->name('instructor.update');
+Route::get('/instructores/{instructor}/edit', [instructorController::class , 'edit'])->name('instructor.edit');
