@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\InscripcionController;
 use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,10 @@ Route::get('/estudiantes/create', [EstudianteController::class, 'create'])->name
 Route::delete('/estudiantes/{estudiante}', [estudianteController::class, 'destroy'])->name('estudiantes.destroy');
 Route::put('/estudiantes/{estudiante}', [estudianteController::class, 'update'])->name('estudiantes.update');
 Route::get('/estudiantes/{estudiante}/edit', [estudianteController::class , 'edit'])->name('estudiantes.edit');
+
+Route::get('/inscripciones', [InscripcionController:: class, 'index'])->name('inscripciones.index');
+Route::post('/inscripciones', [InscripcionController::class, 'store'])->name('inscripciones.store');
+Route::get('/inscripciones/create', [InscripcionController::class, 'create'])->name('inscripciones.create');
+Route::delete('/inscripciones/{inscripcion}', [InscripcionController::class, 'destroy'])->name('inscripciones.destroy');
+Route::put('/inscripciones/{inscripcion}', [InscripcionController::class, 'update'])->name('inscripciones.update');
+Route::get('/inscripciones/{inscripcion}/edit', [InscripcionController::class , 'edit'])->name('inscripciones.edit');
